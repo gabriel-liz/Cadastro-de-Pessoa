@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <br>
+      <h1>
+        {{title}}
+      </h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <br>
+      <a routerLink="/pessoas" class="btn btn-primary">Listar pessoas</a>
+      <a style="margin-left:10px" routerLink="/adicionar" class="btn btn-success">Criar pessoa</a>
+      <br>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

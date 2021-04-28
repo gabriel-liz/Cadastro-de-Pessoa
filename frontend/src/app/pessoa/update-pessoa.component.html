@@ -1,0 +1,44 @@
+<br>
+<h2>Alterar Pessoa</h2>
+<br>
+<form (ngSubmit)="updatePessoa()" #pessoaForm="ngForm">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input [(ngModel)]="pessoa.nome" placeholder="Nome" name="nome" class="form-control" id="nome">
+    </div>
+    <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input [(ngModel)]="pessoa.email" placeholder="E-mail" name="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+      <label for="sexo">Sexo:</label>
+      <select [(ngModel)]="pessoa.sexoId" class="form-control" id="sexo" name="sexo" placeholder="Sexo">
+        <option *ngFor="let sexo of sexos" [ngValue]= "sexo.id">
+          {{sexo.descricao}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="naturalidade">Naturalidade:</label>
+      <input [(ngModel)]="pessoa.naturalidade" placeholder="Naturalidade" name="naturalidade" class="form-control" id="naturalidade">
+    </div>
+    <div class="form-group">
+      <label for="pais">País:</label>
+      <select [(ngModel)]="pessoa.paisId" class="form-control" id="pais" name="pais" placeholder="Pais">
+        <option *ngFor="let pais of paises" [ngValue]="pais.id">
+          {{pais.nome}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cpf">CPF:</label>
+      <input [(ngModel)]="pessoa.cpf" placeholder="CPF" name="cpf" class="form-control" id="cpf">
+    </div>
+    <div class="form-group">
+      <label for="dataNascimento">Data de nascimento:</label>
+      <input [(ngModel)]="pessoa.dataNascimento" placeholder="Data de nascimento" name="dataNascimento" class="form-control" id="dataNascimento">
+    </div>
+    <div class="form-group text-center">
+        <button type="submit" class="btn btn-success">Alterar</button>
+    </div>
+</form>

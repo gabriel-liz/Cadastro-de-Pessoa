@@ -1,0 +1,24 @@
+<h2>Pessoas</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th class="hidden">Id</th>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Naturalidade</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pessoa of pessoas">
+            <td class="hidden">{{pessoa.uuid}}</td>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.email}}</td>
+            <td>{{pessoa.naturalidade}}</td>
+            <td>
+                <a [routerLink]="['/alterar', pessoa.uuid]" class="btn btn-info">Alterar</a> &nbsp;
+                <button class="btn btn-danger" (click)="deletePessoa(pessoa)"> Remover</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
